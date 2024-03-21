@@ -5,7 +5,6 @@ phases:
       python: 3.11
     commands:
       - echo "Creating a Folder named lib..."
-      - mkdir lib
 
   build:
     commands:
