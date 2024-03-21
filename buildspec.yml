@@ -10,10 +10,7 @@ phases:
   build:
     commands:
       - echo "Zipping deployment package for Lambda function 1..."
-      - cd lib
-      - zip -r9 ../deployment_package1.zip .
-      - cd ..
-      - zip -g deployment_package1.zip lambda_function1.py
+      - zip -r9 deployment_package1.zip lib
       
       - echo "Zipping deployment package for Lambda function 2..."
       - zip -g deployment_package2.zip lambda_function2.py
@@ -30,4 +27,3 @@ phases:
       - echo "Updating Lambda function 2 via S3..."
       - aws lambda update-function-code --function-name ProcessFilteredBookings --s3-bucket lambda-builds-zip-assign4 --s3-key deployment_package2.zip
       - echo "Deployment complete!"
-
