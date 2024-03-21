@@ -4,15 +4,15 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
-      - echo "Creating a Folder named lib..."
+      - echo "No Dependencies for installation..."
 
   build:
     commands:
       - echo "Zipping deployment package for Lambda function 1..."
-      - zip -r9 deployment_package1.zip lib
+      - zip -r9 deployment_package1.zip
       - zip -g deployment_package1.zip lambda_function1.py
       - echo "Zipping deployment package for Lambda function 2..."
-      - zip -r9 deployment_package2.zip lib
+      - zip -r9 deployment_package2.zip
       - zip -g deployment_package2.zip lambda_function2.py
 
   post_build:
