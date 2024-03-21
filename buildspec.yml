@@ -11,7 +11,6 @@ phases:
     commands:
       - echo "Zipping deployment package for Lambda function 1..."
       - zip -r9 deployment_package1.zip lib
-      
       - echo "Zipping deployment package for Lambda function 2..."
       - zip -g deployment_package2.zip lambda_function2.py
 
@@ -21,7 +20,6 @@ phases:
       - aws s3 cp deployment_package1.zip s3://lambda-builds-zip-assign4/
       - echo "Updating Lambda function 1 via S3..."
       - aws lambda update-function-code --function-name ProduceAirbnbBookingData --s3-bucket lambda-builds-zip-assign4 --s3-key deployment_package1.zip
-
       - echo "Uploading deployment package 2 to S3..."
       - aws s3 cp deployment_package2.zip s3://lambda-builds-zip-assign4/
       - echo "Updating Lambda function 2 via S3..."
